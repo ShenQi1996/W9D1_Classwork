@@ -1,12 +1,12 @@
 ////////////////////////////////////////////////////  Problem 1 ////////////////////////////////////////////////
 
-// function sum() {
-//   let sum = 0;
-//   for (let i = 0; i < arguments.length; i++) {
-//     sum += arguments[i];
-//   }
-//   return sum;
-// }
+function sum() {
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
 
 function sum2(...args) {
   let sum = 0;
@@ -21,41 +21,41 @@ function sum2(...args) {
 
 ////////////////////////////////////////////////////  Problem 2 ////////////////////////////////////////////////
 
-// Function.prototype.myBind1 = function (context, ...bindingArgs) {
-//     const that = this;
-//     return function (...callingArgs) {
-//         return that.apply(context, bindingArgs.concat(callingArgs));
-//     };
+Function.prototype.myBind1 = function (context, ...bindingArgs) {
+    const that = this;
+    return function (...callingArgs) {
+        return that.apply(context, bindingArgs.concat(callingArgs));
+    };
 
-// }
+}
 
-// Function.prototype.myBind2 = function () {
-//     const that = this;
-//     let context = arguments[0];
-//     let bindingArgs = Array.from(arguments).slice(1);
-//     return function () {
-//         let callingArgs = Array.from(arguments);
-//         return that.apply(context, bindingArgs.concat(callingArgs));
-//     };
+Function.prototype.myBind2 = function () {
+    const that = this;
+    let context = arguments[0];
+    let bindingArgs = Array.from(arguments).slice(1);
+    return function () {
+        let callingArgs = Array.from(arguments);
+        return that.apply(context, bindingArgs.concat(callingArgs));
+    };
 
-// }
+}
 
-// class Cat {
-//     constructor(name) {
-//         this.name = name;
-//     }
+class Cat {
+    constructor(name) {
+        this.name = name;
+    }
 
-//     says(sound, person) {
-//         console.log(`${this.name} says ${sound} to ${person}!`);
-//         return true;
-//     }
-// }
+    says(sound, person) {
+        console.log(`${this.name} says ${sound} to ${person}!`);
+        return true;
+    }
+}
 
-// class Dog {
-//     constructor(name) {
-//         this.name = name;
-//     }
-// }
+class Dog {
+    constructor(name) {
+        this.name = name;
+    }
+}
 
 // const markov = new Cat("Markov");
 // const pavlov = new Dog("Pavlov");
